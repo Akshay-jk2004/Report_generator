@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Event Report</title>
+</head>
+<body>
+    <h1>Generate Event Report</h1>
+    <form method="post" action="{% url 'generate_report' %}">
+        {% csrf_token %}
+        <label for="prompt">Event Details:</label>
+        <textarea id="prompt" name="prompt" rows="10" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Generate Report">
+    </form>
+</body>
+</html>
