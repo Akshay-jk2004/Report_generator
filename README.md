@@ -23,7 +23,7 @@ The Event Report Generator is a Django-based application that generates event re
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/event-report-generator.git
+   git clone https://github.com/Akshay-jk2004/Report_generator.git
    cd event-report-generator
    ```
 
