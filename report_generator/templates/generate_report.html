@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate Event Report</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <h1>Generate Event Report</h1>
-    <form method="post" action="{% url 'generate_report' %}">
-        {% csrf_token %}
-        <label for="prompt">Event Details:</label>
-        <textarea id="prompt" name="prompt" rows="10" cols="50"></textarea>
-        <br>
-        <input type="submit" value="Generate Report">
-    </form>
+    <div class="container">
+        <header>
+            <h1>Generate Event Report</h1>
+            <p>Enter a prompt to generate an event report</p>
+        </header>
+        <form id="reportForm" method="post">
+            {% csrf_token %}
+            <textarea name="prompt" rows="5" placeholder="Enter your prompt here"></textarea>
+            <button type="submit">Generate Report</button>
+        </form>
+        <div class="report" id="report">
+            {% if report %}
+                <pre>{{ report }}</pre>
+            {% endif %}
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Your Company. All rights reserved.
+    </footer>
 </body>
 </html>
